@@ -1,0 +1,29 @@
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+[hidden] {
+  display: none;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+}
+
+label {
+  display: inline-block;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid;
+}
+
+td {
+  line-height: 1.5;
+}
