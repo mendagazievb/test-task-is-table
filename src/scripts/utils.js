@@ -8,5 +8,5 @@ export const copyToClipboard = (text) => {
   input.focus();
   input.select();
   const result = document.execCommand('copy');
-  document.body.removeChild(input);
 };
+

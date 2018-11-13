@@ -1,3 +1,5 @@
+import {copyToClipboard} from './utils';
+
 class Table {
   /**
    * @param id контейнер для таблицы
@@ -60,6 +62,8 @@ class Table {
     table.appendChild(tBody);
     this.wrapper.appendChild(table);
     this.table = table;
+
+    console.log('b');
   }
 
   createRow() {
@@ -120,11 +124,9 @@ class Table {
 
     const data = JSON.stringify(array);
 
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(data)
-        .then(() => alert(data))
-        .catch(err => console.error(err))
-    }
+    copyToClipboard(data);
+
+
   }
 
   /**
@@ -146,3 +148,4 @@ class Table {
   }
 }
 
+export default Table;

@@ -1,0 +1,14 @@
+@import "table.css";
+
+body {
+  font-family: system-ui;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+[hidden] {
+  display: none;
+}
