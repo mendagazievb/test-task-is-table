@@ -9,9 +9,27 @@
 </head>
 <body>
   <div class="container">
-    <div class="toolbar">
-      <button>Создать таблицу</button>
-    </div>
+    <form action="" class="form">
+      <p class="form__item">
+        <label class="form__label form__label--left">
+          Названия столбцов
+          <input class="input form__input" type="text" name="labels" placeholder="Имя, возраст, и т.д" required>
+        </label>
+        <label class="form__label">
+          Количество строк
+          <input class="input form__input" type="number" name="rows" placeholder="Число" required>
+        </label>
+      </p>
+
+      <p class="form__item">
+        <label class="form__label">
+          Названия классов (ячейки заголовка, четной строки, нечетной строки)
+          <input class="input form__input" type="text" name="meta" placeholder="class-name, class-name2, class-name3">
+        </label>
+      </p>
+
+      <button type="button" class="btn js-create-table">Создать таблицу</button>
+    </form>
 
     <div id="table-wrapper"></div>
   </div>

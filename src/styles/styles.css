@@ -1,7 +1,14 @@
 @import "table.css";
+@import "form.css";
 
 body {
   font-family: system-ui;
+  font-size: 14px;
+}
+
+input {
+  font-family: system-ui;
+  font-size: 14px;
 }
 
 .container {
@@ -11,4 +18,8 @@ body {
 
 [hidden] {
   display: none;
+}
+
+.input-error {
+  border: 1px solid darkred;
 }

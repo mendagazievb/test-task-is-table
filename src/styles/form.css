@@ -1,0 +1,22 @@
+.form__item,
+.form__label {
+  display: flex;
+  align-items: center;
+}
+
+.form__label:nth-child(1) {
+  flex-grow: 1;
+}
+
+.form__label--left {
+  margin-right: 20px;
+}
+
+.form__input {
+  margin-left: 10px;
+  &:nth-child(1) {
+    flex-grow: 1;
+  }
+}
+
+

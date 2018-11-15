@@ -50,8 +50,8 @@ module.exports = (env, argv) => {
               options: {
                 ident: 'postcss',
                 plugins: () => isProd
-                  ? [require('postcss-preset-env')(), require('cssnano')()]
-                  : [require('postcss-preset-env')()]
+                  ? [require('postcss-preset-env')({features: {'nesting-rules': true}}), require('cssnano')()]
+                  : [require('postcss-preset-env')({features: {'nesting-rules': true}})]
               }
             }
           ]

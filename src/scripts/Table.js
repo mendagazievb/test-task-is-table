@@ -1,4 +1,4 @@
-import {copyToClipboard} from './utils';
+// import {copyToClipboard} from './utils';
 
 class Table {
   /**
@@ -17,9 +17,11 @@ class Table {
 
   render() {
     const table = document.createElement('table');
+    table.classList.add('table');
     const tHead = document.createElement('thead');
     const tBody = document.createElement('tbody');
     const row = document.createElement('tr');
+    row.classList.add('table__row');
 
     this.fields.forEach(field => {
       const th = document.createElement('th');
@@ -27,10 +29,26 @@ class Table {
       row.appendChild(th);
     });
 
+    // Проверка на наличие класса для строки заголовков
+    if (this.meta[0]) {
+      row.classList.add('table__row--header', this.meta[0]);
+    }
+
     tHead.appendChild(row);
 
     for (let i = 0; i < this.rows; i++) {
-      tBody.appendChild(this.createRow());
+      const row = this.createRow();
+      row.classList.add('table__row');
+
+      if (i % 2 === 0 && this.meta[1]) {
+        row.classList.add('table__row--even', this.meta[1]);
+      }
+
+      if (i % 2 === 1 && this.meta[2]) {
+        row.classList.add('table__row--odd', this.meta[2]);
+      }
+
+      tBody.appendChild(row);
     }
 
     let cell = null;
@@ -62,8 +80,6 @@ class Table {
     table.appendChild(tBody);
     this.wrapper.appendChild(table);
     this.table = table;
-
-    console.log('b');
   }
 
   createRow() {
@@ -124,9 +140,9 @@ class Table {
 
     const data = JSON.stringify(array);
 
-    copyToClipboard(data);
-
-
+    navigator.clipboard.writeText(data)
+      .then(() => alert(data))
+      .catch(err => console.error(err))
   }
 
   /**
