@@ -1,0 +1,9 @@
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.toolbar__input {
+  width: 100px;
+}

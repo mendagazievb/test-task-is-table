@@ -1,5 +1,6 @@
 @import "table.css";
 @import "form.css";
+@import "toolbar.css";
 
 body {
   font-family: system-ui;

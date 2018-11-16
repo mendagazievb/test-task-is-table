@@ -37,6 +37,39 @@ import Table from './Table';
     meta = meta.split(',').map(item => item.trim());
 
     const table = new Table('table-wrapper', labels, rows, meta);
+
+    // Добавляем тулбар для работы с методами из класса Table
+    const buttons = {
+      insertRow: 'Добавить строку',
+      addRow: 'Добавить строку в конец',
+      getData: 'Получить JSON',
+      cleanTable: 'Очистить таблицу'
+    };
+    const div = document.createElement('div');
+    div.classList.add('toolbar');
+    const input = document.createElement('input');
+    input.classList.add('input', 'toolbar__input');
+    input.type = 'number';
+    div.appendChild(input);
+
+    for (let [key, value] of Object.entries(buttons)) {
+      const button = document.createElement('button');
+      button.classList.add('button', 'toolbar__button');
+      button.textContent = value;
+      button.addEventListener('click',  (function (e) {
+        e.preventDefault();
+
+        if (key === 'insertRow') {
+          this.table[key](this.input.value);
+        } else {
+          this.table[key]();
+        }
+
+      }).bind({table, input}));
+      div.appendChild(button);
+    }
+
+    document.querySelector('#table-wrapper').appendChild(div);
     table.render();
   })
 })();

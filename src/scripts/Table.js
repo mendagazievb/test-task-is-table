@@ -71,6 +71,7 @@ class Table {
         labelCell = cell.querySelector('label');
         inputCell = cell.querySelector('input');
         inputCell.hidden = false;
+        inputCell.select();
         labelCell.hidden = true;
       }
 
@@ -104,13 +105,17 @@ class Table {
    */
   insertRow(index) {
     const rows = this.table.rows;
+    const tBody = this.table.tBodies[0];
 
-    if (index < 0 || index > rows.length) {
+    if (!index || index < 0 || index >= rows.length) {
       alert(`Строка с индексом ${index} не найдена`);
-      return
+      return;
     }
 
-    this.table.tBodies[0].insertBefore(this.createRow(), rows[index].nextSibling)
+    index = Number(index);
+    const nextElem = index === 0 ? rows[index + 1] : rows[index].nextSibling;
+
+    tBody.insertBefore(this.createRow(), nextElem);
   }
 
   /**
@@ -141,7 +146,7 @@ class Table {
     const data = JSON.stringify(array);
 
     navigator.clipboard.writeText(data)
-      .then(() => alert(data))
+      .then(() => alert(`JSON скопирован в буфер: ${data}`))
       .catch(err => console.error(err))
   }
 

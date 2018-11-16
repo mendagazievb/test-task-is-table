@@ -17,4 +17,5 @@ th, td {
 
 td {
   line-height: 1.5;
+  cursor: pointer;
 }
