@@ -27,3 +27,17 @@
     display: none;
   }
 }
+
+.table__row--even {
+  background: #f1f1ec;
+}
+
+.table__row--odd {
+  background: #f6f6f6;
+}
+
+.table__row--header {
+  background: #a9bcca;
+  color: #fff;
+}
+

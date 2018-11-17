@@ -13,7 +13,7 @@
   margin: 0;
 }
 
-.form__item {
+.form__item:first-child {
   margin-bottom: 10px;
 }
 
