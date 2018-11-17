@@ -2,8 +2,25 @@
   display: flex;
   justify-content: flex-end;
   margin-top: 20px;
+  padding: 10px;
+  border-radius: 4px;
 }
 
 .toolbar__input {
-  width: 100px;
+  width: 70px;
+}
+
+.toolbar__button {
+  margin-right: 10px;
+  background: #f6f6f6;
+  color: #727278;
+  border: 1px solid #ebebeb;
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    background: #ebebeb;
+    color: #727278;
+  }
 }

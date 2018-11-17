@@ -1,21 +1,32 @@
-table {
+.table {
   table-layout: fixed;
   border-collapse: collapse;
   width: 100%;
   text-align: left;
-  font-size: 14px;
-}
+  font-size: 13px;
+  color: #545454;
 
-label {
-  display: inline-block;
-}
+  & th,
+  & td {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+  }
 
-th, td {
-  padding: 10px;
-  border-bottom: 1px solid;
-}
+  & th {
+    font-weight: normal;
+    border-top: 1px solid #e0e0e0;
+  }
 
-td {
-  line-height: 1.5;
-  cursor: pointer;
+  & td {
+    cursor: pointer;
+  }
+
+  & label {
+    display: inline-block;
+    color: inherit;
+  }
+
+  & [hidden] {
+    display: none;
+  }
 }
