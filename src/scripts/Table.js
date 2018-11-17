@@ -1,5 +1,3 @@
-// import {copyToClipboard} from './utils';
-
 class Table {
   /**
    * @param id контейнер для таблицы
@@ -8,11 +6,11 @@ class Table {
    * @param meta опциональный параметр (отображения ячейки заголовка, четной строки, нечетной строки)
    */
   constructor(id, fields = [], rows = 0, meta) {
+    this.wrapper = document.getElementById(id);
     this.fields = fields;
     this.rows = rows;
     this.meta = meta;
     this.table = null;
-    this.wrapper = document.getElementById(id);
   }
 
   render() {
@@ -90,6 +88,7 @@ class Table {
       const td = document.createElement('td');
       const label = document.createElement('label');
       const input = document.createElement('input');
+      input.classList.add('input');
       input.hidden = true;
       td.appendChild(label);
       td.appendChild(input);
