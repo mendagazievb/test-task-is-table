@@ -23,7 +23,14 @@ class Table {
 
     this.fields.forEach(field => {
       const th = document.createElement('th');
-      th.textContent = field;
+      const label = document.createElement('label');
+      const input = document.createElement('input');
+      label.textContent = field;
+      input.classList.add('input');
+      input.hidden = true;
+      input.value = field;
+      th.appendChild(label);
+      th.appendChild(input);
       row.appendChild(th);
     });
 
@@ -63,7 +70,7 @@ class Table {
         labelCell.textContent = inputCell.value;
       }
 
-      cell = e.target.closest('td');
+      cell = e.target.closest('td') || e.target.closest('th');
 
       if (cell) {
         labelCell = cell.querySelector('label');
@@ -131,7 +138,13 @@ class Table {
     let array = [];
 
     [...this.table.rows].forEach((row, i) => {
-      if (i === 0) return;
+      if (i === 0) {
+        [...row.cells].forEach((cell, i) => {
+          this.fields[i] = cell.querySelector('label').textContent;
+        });
+
+        return;
+      }
       let obj = {};
 
       [...row.cells].forEach((cell, i) => {
