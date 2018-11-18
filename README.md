@@ -15,4 +15,4 @@ p.s: тестовое задание, передача конфига с опц�
 
 ![alt-text](./src/image/Screenshot.png)
 
-[посмотреть демо](https://mendagazievb.github.io/)
+[посмотреть демо](https://mendagazievb.github.io/table/)
