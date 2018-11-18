@@ -1,18 +1,7 @@
+@import "base.css";
 @import "input.css";
 @import "button.css";
 @import "table.css";
 @import "form.css";
 @import "toolbar.css";
-
-body {
-  margin: 0;
-  padding: 10px;
-  font-family: system-ui;
-  font-size: 13px;
-}
-
-.container {
-  width: 960px;
-  margin: 0 auto;
-}
 
